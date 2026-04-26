@@ -385,7 +385,7 @@ function Invitation() {
           </div>
         ) : (
           <form
-            onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+            onSubmit={handleRsvpSubmit}
             className="mx-auto max-w-md space-y-6"
           >
             <div>
@@ -417,10 +417,14 @@ function Invitation() {
             </div>
             <button
               type="submit"
-              className="w-full bg-foreground text-background py-4 text-xs tracking-wider-2 hover:bg-foreground/90 transition-colors"
+              disabled={sending}
+              className="w-full bg-foreground text-background py-4 text-xs tracking-wider-2 hover:bg-foreground/90 transition-colors disabled:opacity-60"
             >
-              ПОДТВЕРДИТЬ
+              {sending ? "ОТПРАВЛЯЕМ..." : "ПОДТВЕРДИТЬ"}
             </button>
+            {sendError && (
+              <p className="text-xs text-destructive text-center">{sendError}</p>
+            )}
             <p className="text-xs text-muted-foreground text-center pt-2">
               Анкету заполните индивидуально на каждого гостя.
             </p>
