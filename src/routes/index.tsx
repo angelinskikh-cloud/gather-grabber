@@ -56,9 +56,11 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 function Invitation() {
+  const { name: urlName } = Route.useSearch();
+  const guestName = urlName.trim();
   const [opened, setOpened] = useState(false);
   const c = useCountdown(new Date("2026-06-06T15:30:00+05:00"));
-  const [form, setForm] = useState({ name: "", attending: "" });
+  const [form, setForm] = useState({ name: guestName, attending: "" });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState<string | null>(null);
