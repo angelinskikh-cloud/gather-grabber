@@ -112,7 +112,7 @@ function Invitation() {
         <div className="relative z-10 flex flex-col items-center">
         <div className="flex flex-col items-center text-center">
           <h1 className="serif text-5xl sm:text-6xl md:text-8xl leading-none">Сергей</h1>
-          <span className="serif italic text-3xl sm:text-4xl md:text-5xl my-3 sm:my-4 text-foreground/80">&</span>
+          <span className="serif italic text-3xl sm:text-4xl md:text-5xl my-3 sm:my-4 text-foreground/80 font-serif">И</span>
           <h1 className="serif text-5xl sm:text-6xl md:text-8xl leading-none">Ангелина</h1>
         </div>
         <div className="mt-10 sm:mt-12 flex items-center gap-3 sm:gap-6">
