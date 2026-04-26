@@ -57,6 +57,27 @@ function Invitation() {
   const c = useCountdown(new Date("2026-06-06T15:30:00+05:00"));
   const [form, setForm] = useState({ name: "", attending: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
+
+  const handleRsvpSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.name.trim() || !form.attending) return;
+    setSending(true);
+    setSendError(null);
+    try {
+      const { error } = await supabase.functions.invoke("send-rsvp", {
+        body: { name: form.name.trim(), attending: form.attending },
+      });
+      if (error) throw error;
+      setSubmitted(true);
+    } catch (err) {
+      console.error("RSVP send failed:", err);
+      setSendError("Не удалось отправить ответ. Попробуйте ещё раз.");
+    } finally {
+      setSending(false);
+    }
+  };
 
   if (!opened) {
     return (
