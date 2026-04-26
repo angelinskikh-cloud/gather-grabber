@@ -111,14 +111,14 @@ function Invitation() {
         <div className="absolute inset-0 bg-background/40" />
         <div className="relative z-10 flex flex-col items-center">
         <div className="flex flex-col items-center text-center">
-          <h1 className="serif text-6xl md:text-8xl leading-none">Сергей</h1>
-          <span className="serif italic text-4xl md:text-5xl my-4 text-foreground/80">&</span>
-          <h1 className="serif text-6xl md:text-8xl leading-none">Ангелина</h1>
+          <h1 className="serif text-5xl sm:text-6xl md:text-8xl leading-none">Сергей</h1>
+          <span className="serif italic text-3xl sm:text-4xl md:text-5xl my-3 sm:my-4 text-foreground/80">&</span>
+          <h1 className="serif text-5xl sm:text-6xl md:text-8xl leading-none">Ангелина</h1>
         </div>
-        <div className="mt-12 flex items-center gap-6">
-          <div className="h-px w-12 bg-foreground/40" />
-          <p className="serif text-2xl tracking-widest">06 · 06 · 2026</p>
-          <div className="h-px w-12 bg-foreground/40" />
+        <div className="mt-10 sm:mt-12 flex items-center gap-3 sm:gap-6">
+          <div className="h-px w-8 sm:w-12 bg-foreground/40" />
+          <p className="serif text-lg sm:text-2xl tracking-widest whitespace-nowrap">06 · 06 · 2026</p>
+          <div className="h-px w-8 sm:w-12 bg-foreground/40" />
         </div>
         </div>
       </section>
@@ -127,7 +127,12 @@ function Invitation() {
 
       {/* CALENDAR */}
       <Reveal>
-      <section className="px-6 py-20">
+      <section className="px-6 py-16 sm:py-20">
+        <div className="text-center mb-10">
+          <h2 className="serif text-4xl sm:text-5xl md:text-6xl leading-none mb-2">Сергей</h2>
+          <span className="serif italic text-2xl sm:text-3xl text-foreground/70 block my-1">и</span>
+          <h2 className="serif text-4xl sm:text-5xl md:text-6xl leading-none">Ангелина</h2>
+        </div>
         <p className="text-xs tracking-wider-2 text-foreground text-center mb-6">ДОРОГИЕ ГОСТИ</p>
         <p className="mx-auto max-w-xl text-center text-base leading-relaxed text-foreground/90 mb-12">
           С удовольствием приглашаем вас отдохнуть на празднике, посвящённом одному грандиозному событию —{" "}
@@ -135,12 +140,12 @@ function Invitation() {
         </p>
         <SectionLabel>Июнь 2026</SectionLabel>
         <div className="mx-auto max-w-md">
-          <div className="grid grid-cols-7 gap-2 text-center text-xs tracking-widest text-muted-foreground mb-3">
+          <div className="grid grid-cols-7 gap-1 sm:gap-2 text-center text-[10px] sm:text-xs tracking-widest text-muted-foreground mb-3">
             {["пн", "вт", "ср", "чт", "пт", "сб", "вс"].map((d) => (
               <div key={d}>{d}</div>
             ))}
           </div>
-          <div className="grid grid-cols-7 gap-2 text-center serif text-lg">
+          <div className="grid grid-cols-7 gap-1 sm:gap-2 text-center serif text-base sm:text-lg">
             {Array.from({ length: 35 }).map((_, i) => {
               // June 2026 starts on Monday (offset 0)
               const day = i + 1;
