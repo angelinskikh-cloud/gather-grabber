@@ -256,7 +256,7 @@ function Invitation() {
         <p className="mx-auto max-w-xl text-center text-base text-muted-foreground mb-10">
           Нам будет очень приятно, если Вы поддержите цветовую палитру нашей свадьбы в одежде.
         </p>
-        <div className="mx-auto grid max-w-3xl grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
+        <div className="mx-auto flex max-w-3xl flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
           {[
             { hex: "#D7A192", name: "Rose Tan", code: "16-1511 TCX" },
             { hex: "#FDF38A", name: "Pastel Yellow", code: "Pantone 910 C" },
@@ -264,7 +264,10 @@ function Invitation() {
             { hex: "#5A6B43", name: "Cactus", code: "18-0130 TCX" },
             { hex: "#4F2C1D", name: "Deep Brown", code: "PMS 4625 C" },
           ].map((c) => (
-            <div key={c.code} className="flex flex-col items-center text-center">
+            <div
+              key={c.code}
+              className="flex flex-col items-center text-center basis-[calc(33.333%-1rem)] sm:basis-[calc(33.333%-1.5rem)] md:basis-[calc(20%-1.6rem)]"
+            >
               <div
                 className="aspect-square w-full rounded-full ring-1 ring-foreground/10"
                 style={{ backgroundColor: c.hex }}
