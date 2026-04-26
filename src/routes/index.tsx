@@ -17,6 +17,9 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Свадебное приглашение Сергея и Ангелины — 6 июня 2026, Челябинск" },
     ],
   }),
+  validateSearch: (search: Record<string, unknown>) => ({
+    name: typeof search.name === "string" ? search.name : "",
+  }),
 });
 
 function useCountdown(target: Date) {
