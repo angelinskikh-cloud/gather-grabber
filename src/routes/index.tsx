@@ -312,7 +312,7 @@ function Invitation() {
             Главное для нас — ваше внимание, а радость доставит любой <em>подарок в конверте</em>.
           </p>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Пожалуйста, <span className="text-foreground">не дарите цветы</span>. А если хотите сделать нам комплимент, подарите нам <em className="serif text-foreground">лотерейный билетик</em> — пусть удача станет нашим первым семейным выигрышем.
+           Пожалуйста, <span className="text-foreground">не дарите цветы</span>. А если хотите сделать нам комплимент, подарите нам <em className="serif text-foreground">лотерейный билет</em> — пусть удача станет нашим первым семейным выигрышем.
           </p>
           <p className="text-sm text-muted-foreground italic pt-4">
             Если вы подготовили творческий подарок, предупредите о нём нашего помощника Наталью заранее — мы с удовольствием включим его в программу вечера.
