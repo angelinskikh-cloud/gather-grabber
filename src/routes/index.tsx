@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Reveal } from "@/components/Reveal";
+import { supabase } from "@/integrations/supabase/client";
 import heroHands from "@/assets/hero-hands.jpg";
 import venue from "@/assets/venue.jpg";
 import couplePhoto from "@/assets/site/couple.jpg";
@@ -56,6 +57,27 @@ function Invitation() {
   const c = useCountdown(new Date("2026-06-06T15:30:00+05:00"));
   const [form, setForm] = useState({ name: "", attending: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
+
+  const handleRsvpSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.name.trim() || !form.attending) return;
+    setSending(true);
+    setSendError(null);
+    try {
+      const { error } = await supabase.functions.invoke("send-rsvp", {
+        body: { name: form.name.trim(), attending: form.attending },
+      });
+      if (error) throw error;
+      setSubmitted(true);
+    } catch (err) {
+      console.error("RSVP send failed:", err);
+      setSendError("Не удалось отправить ответ. Попробуйте ещё раз.");
+    } finally {
+      setSending(false);
+    }
+  };
 
   if (!opened) {
     return (
@@ -363,7 +385,7 @@ function Invitation() {
           </div>
         ) : (
           <form
-            onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+            onSubmit={handleRsvpSubmit}
             className="mx-auto max-w-md space-y-6"
           >
             <div>
@@ -395,10 +417,14 @@ function Invitation() {
             </div>
             <button
               type="submit"
-              className="w-full bg-foreground text-background py-4 text-xs tracking-wider-2 hover:bg-foreground/90 transition-colors"
+              disabled={sending}
+              className="w-full bg-foreground text-background py-4 text-xs tracking-wider-2 hover:bg-foreground/90 transition-colors disabled:opacity-60"
             >
-              ПОДТВЕРДИТЬ
+              {sending ? "ОТПРАВЛЯЕМ..." : "ПОДТВЕРДИТЬ"}
             </button>
+            {sendError && (
+              <p className="text-xs text-destructive text-center">{sendError}</p>
+            )}
             <p className="text-xs text-muted-foreground text-center pt-2">
               Анкету заполните индивидуально на каждого гостя.
             </p>
