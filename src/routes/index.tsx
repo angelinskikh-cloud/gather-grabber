@@ -128,11 +128,6 @@ function Invitation() {
       {/* CALENDAR */}
       <Reveal>
       <section className="px-6 py-16 sm:py-20">
-        <div className="text-center mb-10">
-          <h2 className="serif text-4xl sm:text-5xl md:text-6xl leading-none mb-2">Сергей</h2>
-          <span className="serif italic text-2xl sm:text-3xl text-foreground/70 block my-1">и</span>
-          <h2 className="serif text-4xl sm:text-5xl md:text-6xl leading-none">Ангелина</h2>
-        </div>
         <p className="text-xs tracking-wider-2 text-foreground text-center mb-6">ДОРОГИЕ ГОСТИ</p>
         <p className="mx-auto max-w-xl text-center text-base leading-relaxed text-foreground/90 mb-12">
           С удовольствием приглашаем вас отдохнуть на празднике, посвящённом одному грандиозному событию —{" "}
