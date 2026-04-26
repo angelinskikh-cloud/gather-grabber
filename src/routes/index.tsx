@@ -155,9 +155,11 @@ function Invitation() {
       {/* CALENDAR */}
       <Reveal>
       <section className="px-6 py-16 sm:py-20">
-        <p className="text-2xl tracking-wider-2 text-foreground text-center mb-6">
-          {guestName ? guestName.toUpperCase() : "​"}
-        </p>
+        {guestName && (
+          <p className="text-xl sm:text-2xl tracking-wider-2 text-foreground text-center mb-6 break-words">
+            {guestName.toUpperCase()}
+          </p>
+        )}
         <p className="mx-auto max-w-xl text-center text-base leading-relaxed text-foreground/90 mb-12">
           С удовольствием приглашаем вас отдохнуть на празднике, посвящённом одному грандиозному событию —{" "}
           <em className="serif">нашей свадьбе!</em>
