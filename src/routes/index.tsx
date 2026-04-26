@@ -254,7 +254,7 @@ function Invitation() {
       <section className="px-6 py-16 sm:py-20">
         <SectionLabel>Дресс-код</SectionLabel>
         <p className="mx-auto max-w-xl text-center text-base text-muted-foreground mb-10">
-          Нам будет очень приятно, если Вы поддержите цветовую палитру нашей свадьбы в одежде.
+          Мы будем очень рады если вы поддержите наше летнее настроение своим нарядом
         </p>
         <div className="mx-auto flex max-w-3xl flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
           {[
