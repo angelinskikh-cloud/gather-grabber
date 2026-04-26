@@ -17,6 +17,9 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Свадебное приглашение Сергея и Ангелины — 6 июня 2026, Челябинск" },
     ],
   }),
+  validateSearch: (search: Record<string, unknown>) => ({
+    name: typeof search.name === "string" ? search.name : "",
+  }),
 });
 
 function useCountdown(target: Date) {
@@ -53,9 +56,11 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 function Invitation() {
+  const { name: urlName } = Route.useSearch();
+  const guestName = urlName.trim();
   const [opened, setOpened] = useState(false);
   const c = useCountdown(new Date("2026-06-06T15:30:00+05:00"));
-  const [form, setForm] = useState({ name: "", attending: "" });
+  const [form, setForm] = useState({ name: guestName, attending: "" });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState<string | null>(null);
@@ -150,10 +155,21 @@ function Invitation() {
       {/* CALENDAR */}
       <Reveal>
       <section className="px-6 py-16 sm:py-20">
-        <p className="text-xs tracking-wider-2 text-foreground text-center mb-6">ДОРОГИЕ ГОСТИ</p>
+        <p className="text-xs tracking-wider-2 text-foreground text-center mb-6">
+          {guestName ? guestName.toUpperCase() : "ДОРОГИЕ ГОСТИ"}
+        </p>
         <p className="mx-auto max-w-xl text-center text-base leading-relaxed text-foreground/90 mb-12">
-          С удовольствием приглашаем вас отдохнуть на празднике, посвящённом одному грандиозному событию —{" "}
-          <em className="serif">нашей свадьбе!</em>
+          {guestName ? (
+            <>
+              {guestName}, с удовольствием приглашаем вас отдохнуть на празднике, посвящённом одному грандиозному событию —{" "}
+              <em className="serif">нашей свадьбе!</em>
+            </>
+          ) : (
+            <>
+              С удовольствием приглашаем вас отдохнуть на празднике, посвящённом одному грандиозному событию —{" "}
+              <em className="serif">нашей свадьбе!</em>
+            </>
+          )}
         </p>
         <SectionLabel>Июнь 2026</SectionLabel>
         <div className="mx-auto max-w-md">
