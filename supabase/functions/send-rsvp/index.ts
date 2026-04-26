@@ -46,7 +46,10 @@ Deno.serve(async (req) => {
       },
       body: JSON.stringify({
         from: "Wedding RSVP <onboarding@resend.dev>",
-        to: ["lina.lukinskikh@bk.ru"],
+        // Resend's test sender (onboarding@resend.dev) can only send to the
+        // account owner's email. To send to lina.lukinskikh@bk.ru directly,
+        // verify a domain at resend.com/domains and change `from` accordingly.
+        to: ["angelinskikh@gmail.com"],
         subject,
         html,
       }),
