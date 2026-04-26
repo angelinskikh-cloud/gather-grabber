@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Reveal } from "@/components/Reveal";
+import { supabase } from "@/integrations/supabase/client";
 import heroHands from "@/assets/hero-hands.jpg";
 import venue from "@/assets/venue.jpg";
 import couplePhoto from "@/assets/site/couple.jpg";
