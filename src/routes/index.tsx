@@ -105,11 +105,11 @@ function Invitation() {
           className="absolute inset-0 h-full w-full object-cover opacity-60 mix-blend-multiply"
         />
         <div className="absolute inset-0 bg-background/20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-transparent to-background/70" />
-        <div className="relative z-10 flex min-h-screen flex-col items-center justify-end pb-24 px-6 text-center animate-fade-in">
-          <p className="text-xs tracking-wider-2 text-foreground/80 mb-4">ВЫ ПОЛУЧИЛИ</p>
-          <h1 className="serif text-5xl md:text-7xl text-foreground mb-6">Приглашение</h1>
-          <p className="text-sm text-foreground/70 italic animate-float">— нажмите на экран —</p>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/70" />
+        <div className="relative z-10 flex min-h-screen flex-col items-center justify-start pt-20 sm:pt-28 px-6 text-center animate-fade-in">
+          <p className="text-[11px] sm:text-xs tracking-wider-2 text-foreground/80 mb-3 sm:mb-4">ВЫ ПОЛУЧИЛИ</p>
+          <h1 className="serif text-4xl sm:text-5xl md:text-7xl text-foreground mb-4 sm:mb-6">Приглашение</h1>
+          <p className="text-xs sm:text-sm text-foreground/70 italic animate-float">— нажмите на экран —</p>
         </div>
       </main>
     );
