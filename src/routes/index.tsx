@@ -156,7 +156,7 @@ function Invitation() {
       <Reveal>
       <section className="px-6 py-16 sm:py-20">
         <p className="text-xs tracking-wider-2 text-foreground text-center mb-6">
-          {guestName ? guestName.toUpperCase() : "ДОРОГИЕ ГОСТИ"}
+          {guestName ? guestName.toUpperCase() : "​"}
         </p>
         <p className="mx-auto max-w-xl text-center text-base leading-relaxed text-foreground/90 mb-12">
           {guestName ? (
