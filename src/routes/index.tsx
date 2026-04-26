@@ -155,10 +155,21 @@ function Invitation() {
       {/* CALENDAR */}
       <Reveal>
       <section className="px-6 py-16 sm:py-20">
-        <p className="text-xs tracking-wider-2 text-foreground text-center mb-6">ДОРОГИЕ ГОСТИ</p>
+        <p className="text-xs tracking-wider-2 text-foreground text-center mb-6">
+          {guestName ? guestName.toUpperCase() : "ДОРОГИЕ ГОСТИ"}
+        </p>
         <p className="mx-auto max-w-xl text-center text-base leading-relaxed text-foreground/90 mb-12">
-          С удовольствием приглашаем вас отдохнуть на празднике, посвящённом одному грандиозному событию —{" "}
-          <em className="serif">нашей свадьбе!</em>
+          {guestName ? (
+            <>
+              {guestName}, с удовольствием приглашаем вас отдохнуть на празднике, посвящённом одному грандиозному событию —{" "}
+              <em className="serif">нашей свадьбе!</em>
+            </>
+          ) : (
+            <>
+              С удовольствием приглашаем вас отдохнуть на празднике, посвящённом одному грандиозному событию —{" "}
+              <em className="serif">нашей свадьбе!</em>
+            </>
+          )}
         </p>
         <SectionLabel>Июнь 2026</SectionLabel>
         <div className="mx-auto max-w-md">
