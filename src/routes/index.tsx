@@ -94,7 +94,7 @@ function Invitation() {
       style={{
         backgroundImage: `url(${bgSilkCream})`,
         backgroundSize: "cover",
-        backgroundAttachment: "fixed",
+        backgroundAttachment: "scroll",
         backgroundPosition: "center",
       }}
     >
@@ -173,15 +173,15 @@ function Invitation() {
 
       {/* REGISTRATION */}
       <Reveal>
-      <section className="px-6 py-20">
+      <section className="px-6 py-16 sm:py-20">
         <SectionLabel>Регистрация</SectionLabel>
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm text-muted-foreground mb-2">Церемония пройдёт по адресу:</p>
-          <p className="serif text-2xl md:text-3xl mb-2">г. Шадринск, ул. Крайняя, д. 17</p>
-          <p className="serif italic text-xl">Санаторий «Жемчужина Зауралья»</p>
+          <p className="serif text-xl sm:text-2xl md:text-3xl mb-2">г. Шадринск, ул. Крайняя, д. 17</p>
+          <p className="serif italic text-lg sm:text-xl">Санаторий «Жемчужина Зауралья»</p>
 
           <div className="my-10 overflow-hidden rounded-sm">
-            <img src={registrationImg} alt="Место регистрации" loading="lazy" className="w-full h-[420px] object-cover" />
+            <img src={registrationImg} alt="Место регистрации" loading="lazy" className="w-full h-[260px] sm:h-[360px] md:h-[420px] object-cover" />
           </div>
 
           <a
@@ -200,15 +200,15 @@ function Invitation() {
 
       {/* BANQUET */}
       <Reveal>
-      <section className="px-6 py-20">
+      <section className="px-6 py-16 sm:py-20">
         <SectionLabel>Банкет</SectionLabel>
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm text-muted-foreground mb-2">Наш праздник пройдёт по адресу:</p>
-          <p className="serif text-2xl md:text-3xl mb-2">г. Шадринск, ул. Розы Люксембург, д. 11</p>
-          <p className="serif italic text-xl">Банкетный зал «Купец»</p>
+          <p className="serif text-xl sm:text-2xl md:text-3xl mb-2">г. Шадринск, ул. Розы Люксембург, д. 11</p>
+          <p className="serif italic text-lg sm:text-xl">Банкетный зал «Купец»</p>
 
           <div className="my-10 overflow-hidden rounded-sm">
-            <img src={venue} alt="Зал" loading="lazy" className="w-full h-[420px] object-cover" />
+            <img src={venue} alt="Зал" loading="lazy" className="w-full h-[260px] sm:h-[360px] md:h-[420px] object-cover" />
           </div>
 
           <a
@@ -227,18 +227,18 @@ function Invitation() {
 
       {/* TIMING */}
       <Reveal>
-      <section className="px-6 py-20">
+      <section className="px-6 py-16 sm:py-20">
         <SectionLabel>Тайминг</SectionLabel>
-        <div className="mx-auto max-w-2xl space-y-10">
+        <div className="mx-auto max-w-2xl space-y-8 sm:space-y-10">
           {[
             { time: "14:30", title: "Сбор гостей", text: "Время общения, приветственный фуршет и бокал игристого" },
             { time: "14:45", title: "Регистрация", text: "Вы станете свидетелями того, как мы скажем друг другу «да»" },
             { time: "17:30", title: "Банкет", text: "Готовьте удобные туфли и хорошее настроение — скучно не будет" },
           ].map((row) => (
-            <div key={row.time} className="grid grid-cols-[80px_1fr] md:grid-cols-[120px_1fr] gap-6 items-baseline border-b border-foreground/10 pb-8">
-              <div className="serif text-3xl md:text-4xl">{row.time}</div>
+            <div key={row.time} className="grid grid-cols-[70px_1fr] sm:grid-cols-[80px_1fr] md:grid-cols-[120px_1fr] gap-4 sm:gap-6 items-baseline border-b border-foreground/10 pb-6 sm:pb-8">
+              <div className="serif text-2xl sm:text-3xl md:text-4xl">{row.time}</div>
               <div>
-                <div className="text-xs tracking-wider-2 uppercase mb-2">{row.title}</div>
+                <div className="text-[11px] sm:text-xs tracking-wider-2 uppercase mb-2">{row.title}</div>
                 <p className="text-sm text-muted-foreground leading-relaxed">{row.text}</p>
               </div>
             </div>
@@ -251,12 +251,12 @@ function Invitation() {
 
       {/* DRESS CODE */}
       <Reveal>
-      <section className="px-6 py-20">
+      <section className="px-6 py-16 sm:py-20">
         <SectionLabel>Дресс-код</SectionLabel>
         <p className="mx-auto max-w-xl text-center text-base text-muted-foreground mb-10">
           Нам будет очень приятно, если Вы поддержите цветовую палитру нашей свадьбы в одежде.
         </p>
-        <div className="mx-auto grid max-w-3xl grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 md:gap-8">
+        <div className="mx-auto grid max-w-3xl grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
           {[
             { hex: "#D7A192", name: "Rose Tan", code: "16-1511 TCX" },
             { hex: "#FDF38A", name: "Pastel Yellow", code: "Pantone 910 C" },
@@ -282,10 +282,10 @@ function Invitation() {
 
       {/* VK CHAT */}
       <Reveal>
-      <section className="px-6 py-20">
+      <section className="px-6 py-16 sm:py-20">
         <SectionLabel>Наш чат ВКонтакте</SectionLabel>
         <div className="mx-auto max-w-2xl text-center space-y-8">
-          <p className="serif text-2xl md:text-3xl leading-relaxed">
+          <p className="serif text-xl sm:text-2xl md:text-3xl leading-relaxed">
             Поделитесь моментами нашего праздника
           </p>
           <p className="text-base text-muted-foreground leading-relaxed">
@@ -307,10 +307,10 @@ function Invitation() {
 
       {/* WISHES */}
       <Reveal>
-      <section className="px-6 py-20">
+      <section className="px-6 py-16 sm:py-20">
         <SectionLabel>Пожелания</SectionLabel>
-        <div className="mx-auto max-w-2xl space-y-8 text-center">
-          <p className="serif text-xl md:text-2xl leading-relaxed">
+        <div className="mx-auto max-w-2xl space-y-6 sm:space-y-8 text-center">
+          <p className="serif text-lg sm:text-xl md:text-2xl leading-relaxed">
             Главное для нас — ваше внимание, а радость доставит любой <em>подарок в конверте</em>.
           </p>
           <p className="text-base text-muted-foreground leading-relaxed">
@@ -327,19 +327,19 @@ function Invitation() {
 
       {/* CONTACTS */}
       <Reveal>
-      <section className="px-6 py-20">
+      <section className="px-6 py-16 sm:py-20">
         <SectionLabel>Контакты</SectionLabel>
         <p className="text-center text-sm text-muted-foreground mb-10">
           Если у вас остались вопросы — мы с удовольствием на них ответим.
         </p>
-        <div className="mx-auto grid max-w-3xl gap-8 md:grid-cols-2">
+        <div className="mx-auto grid max-w-3xl gap-6 sm:gap-8 md:grid-cols-2">
           {[
             { role: "Ангелина — невеста", phone: "+7 912 973 73 09" },
             { role: "Наталья — ведущая", phone: "+7 912 520 35 50" },
           ].map((c) => (
-            <div key={c.phone} className="text-center border border-foreground/15 p-8">
+            <div key={c.phone} className="text-center border border-foreground/15 p-6 sm:p-8">
               <p className="text-xs tracking-wider-2 text-muted-foreground uppercase mb-3">{c.role}</p>
-              <a href={`tel:${c.phone.replace(/\s/g, "")}`} className="serif text-2xl hover:italic">
+              <a href={`tel:${c.phone.replace(/\s/g, "")}`} className="serif text-xl sm:text-2xl hover:italic break-all">
                 {c.phone}
               </a>
             </div>
@@ -352,7 +352,7 @@ function Invitation() {
 
       {/* RSVP */}
       <Reveal>
-      <section className="px-6 py-20 bg-secondary/40">
+      <section className="px-6 py-16 sm:py-20 bg-secondary/40">
         <SectionLabel>Анкета гостя</SectionLabel>
         <p className="text-center text-sm text-muted-foreground mb-2">
           Пожалуйста, подтвердите своё присутствие до
@@ -411,10 +411,10 @@ function Invitation() {
 
       {/* COUNTDOWN */}
       <Reveal>
-      <section className="px-6 py-24 text-center">
+      <section className="px-6 py-20 sm:py-24 text-center">
         <SectionLabel>Wedding Date</SectionLabel>
-        <p className="serif text-2xl mb-10">До свадьбы осталось:</p>
-        <div className="mx-auto grid max-w-2xl grid-cols-4 gap-4 md:gap-8">
+        <p className="serif text-xl sm:text-2xl mb-10">До свадьбы осталось:</p>
+        <div className="mx-auto grid max-w-2xl grid-cols-4 gap-2 sm:gap-4 md:gap-8">
           {[
             { v: c.d, l: "Дней" },
             { v: c.h, l: "Часов" },
@@ -422,8 +422,8 @@ function Invitation() {
             { v: c.s, l: "Секунд" },
           ].map((u) => (
             <div key={u.l}>
-              <div className="serif text-4xl md:text-6xl">{u.v}</div>
-              <div className="text-xs tracking-wider-2 text-muted-foreground mt-2 uppercase">{u.l}</div>
+              <div className="serif text-3xl sm:text-4xl md:text-6xl">{u.v}</div>
+              <div className="text-[10px] sm:text-xs tracking-wider-2 text-muted-foreground mt-2 uppercase">{u.l}</div>
             </div>
           ))}
         </div>
