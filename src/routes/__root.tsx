@@ -1,6 +1,8 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import bgSilkCream from "@/assets/site/img5.jpg";
+import heroHands from "@/assets/hero-hands.jpg";
 
 function NotFoundComponent() {
   return (
@@ -59,6 +61,8 @@ export const Route = createRootRoute({
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap",
       },
+      { rel: "preload", as: "image", href: bgSilkCream, fetchPriority: "high" },
+      { rel: "preload", as: "image", href: heroHands, fetchPriority: "high" },
     ],
   }),
   shellComponent: RootShell,
@@ -68,11 +72,11 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ru" style={{ background: "oklch(0.975 0.005 80)" }}>
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body style={{ background: "oklch(0.975 0.005 80)", margin: 0 }}>
         {children}
         <Scripts />
       </body>
