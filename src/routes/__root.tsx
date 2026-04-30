@@ -4,6 +4,16 @@ import appCss from "../styles.css?url";
 import bgSilkCream from "@/assets/site/img5.jpg";
 import heroHands from "@/assets/hero-hands.jpg";
 
+// Локальные шрифты — не зависят от Google Fonts (важно для России без VPN)
+import "@fontsource/cormorant-garamond/300.css";
+import "@fontsource/cormorant-garamond/400.css";
+import "@fontsource/cormorant-garamond/500.css";
+import "@fontsource/cormorant-garamond/300-italic.css";
+import "@fontsource/cormorant-garamond/400-italic.css";
+import "@fontsource/inter/300.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -49,17 +59,6 @@ export const Route = createRootRoute({
       {
         rel: "stylesheet",
         href: appCss,
-      },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "preload",
-        as: "style",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap",
-      },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap",
       },
       { rel: "preload", as: "image", href: bgSilkCream, fetchPriority: "high" },
       { rel: "preload", as: "image", href: heroHands, fetchPriority: "high" },
