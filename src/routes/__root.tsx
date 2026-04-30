@@ -52,8 +52,6 @@ export const Route = createRootRoute({
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Сергей & Ангелина · 06.06.2026" },
       { name: "twitter:description", content: "A digital wedding invitation and memory keeper for your special day." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/30b3941d-d079-4572-b4cb-e6fcdfc6e300/id-preview-30e36c17--89040d6b-7d84-4ea7-9900-097d030d8aaf.lovable.app-1777207004111.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/30b3941d-d079-4572-b4cb-e6fcdfc6e300/id-preview-30e36c17--89040d6b-7d84-4ea7-9900-097d030d8aaf.lovable.app-1777207004111.png" },
     ],
     links: [
       {
