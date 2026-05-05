@@ -1,0 +1,9 @@
+name = "gather-grabber"
+main = "server/index.js"
+compatibility_date = "2024-12-18"
+
+[build]
+command = "npm run build"
+
+[env.production]
+vars = { NODE_VERSION = "20" }
